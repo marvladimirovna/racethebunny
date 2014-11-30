@@ -28,6 +28,7 @@
 	-webkit-backface-visibility: hidden;
 	-webkit-transition: border-width 0.3s, background-color 0.3s, height 0s 0.3s;
 	transition: border-width 0.3s, background-color 0.3s, height 0s 0.3s;
+    font-size: 0.71em;
 }
 
 .bt-menu.bt-menu-open {
@@ -117,7 +118,7 @@
 }
 
 .bt-menu ul:first-of-type {
-	top: 75px;
+/*	top: 75px;*/
 	right: 0;
 }
 
