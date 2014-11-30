@@ -25,7 +25,8 @@
   </head>
   
   	<body>
-     
+<!--http://tympanus.net/codrops/2013/09/30/animated-border-menus/-->
+        
      <nav id="bt-menu" class="bt-menu">
      
 				<a href="" class="bt-menu-trigger"><span>Menu</span></a>
@@ -33,9 +34,9 @@
 				<ul>
                 
 					<li><a href="#">pause</a></li>
-					<li><a href="#">cancel</a></li>
+					<li><a id="menu_cancel" href="#">cancel</a></li>
 					<li><a href="#">reroute</a></li>
-					<li><a href="#">turn off bunny </a></li>
+					<li><a href="#">turn off bunny</a></li>
 					
 				</ul>
      </nav>
@@ -68,12 +69,12 @@
   
   
   
-  <form data-role='none' action="/routebeschrijving" onSubmit="return false;" class="routeForm">
+ <!-- <form data-role='none' action="/routebeschrijving" onSubmit="return false;" class="routeForm">
     
     <label><input type="radio" name="travelMode" value="TRANSIT" /> Public transport</label>
     <label><input type="radio" name="travelMode" value="WALKING" /> Walking</label>
     <input type="submit" value="Calculate route">
-  </form>
+  </form>-->
   
   <div data-role='none' class="info"><div>To reach destination you need to go <div class="speed1"></div></div></div>
   <div class="impossible"><p>NOT  POSSIBLE!</br>because you will need to go faster than 4 MPH (average human walking speed)</p></div>

@@ -200,7 +200,7 @@ function calcRoute(informationOnly) {
   // when updatePosition is done - inner function will be executed
   updatePosition(function() {
     var end = document.getElementById('address').value;
-	var travelMode = $('input[name="travelMode"]:checked').val();
+	var travelMode = "WALKING"; //$('input[name="travelMode"]:checked').val();
 	
 	storePlace(end);
 	
@@ -478,4 +478,20 @@ $(function() {
       displayKey: 'value',
       source: substringMatcher()
     });
+
+    // handler for cancel menu
+    // should stop current navigation and clear input fields
+    $("#menu_cancel").click(function() {
+        if (timeout) {
+            clearTimeout(timeout);
+        }
+        if (timeout1) {
+            clearTimeout(timeout1);
+        }
+        emptyinput();
+        // remove navigation route from map
+        // https://developers.google.com/maps/documentation/javascript/reference#DirectionsRenderer
+        directionsDisplay.setMap(null);
+    });
+    
 });
