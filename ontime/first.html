@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>ontime_landingpage</title>
+    <link href="firststyle.css" rel="stylesheet">
+    
+   	<script src="jquery-1.10.2.min.js"></script>
+    
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700' rel='stylesheet' type='text/css'>
+</head>
+
+<body class="landingpage">
+
+
+  <div class="icons">
+  
+  <img class="clock" src="clock2.png" width="61" height="61"/>
+  <img  class="path" src="path2.png" width="61" height="61"/>
+  <img class="legs" src="legs.png" width="61" height="61"/>
+  
+  </div>
+  
+ <!-- <div class="explanation">
+   <img class="forclock" src="forclock.png"/>
+   <img class="forpath" src="forpath.png"/>
+   <img class="forlegs" src="forlegs.png"/>
+   </div> -->
+  
+  <div class="name">OnTime</div>
+  
+  <div class="description">You can track your speed and at the same time the system let you know when you need to be faster and when you can take a rest. You will reach the destination on time.  
+</div>
+  
+
+  
+    
+    
+<a class="button" href="index.html">Go</a>
+
+<!--<div class="train"><img src="train4.png"></div>-->
+
+<script>
+
+$(document).ready(function(){
+	
+	$(".clock").click(function(){
+		$(".forclock").fadeIn(300).delay(1000).fadeOut(300);
+	});
+		
+	$(".path").click(function(){
+	$(".forpath").fadeIn(300).delay(1000).fadeOut(300);
+		});
+		
+	$(".legs").click(function(){
+	$(".forlegs").fadeIn(300).delay(1000).fadeOut(300);
+		});
+	
+	});
+
+</script>
+    
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta charset="utf-8">
+    <title>punctual me</title>
+    <link href="style.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/icons.css" />
+	<link rel="stylesheet" type="text/css" href="css/style5.css" />
+	<script src="js/modernizr.custom.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+   	<script src="jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="myjs.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Pathway+Gothic+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700' rel='stylesheet' type='text/css'>
+  
+   <link href='http://cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.5.3/compressed/themes/classic.css' rel='stylesheet' type='text/css'>
+    <link href='http://cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.5.3/compressed/themes/classic.time.css' rel='stylesheet' type='text/css'>
+  
+  	<script src='http://cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.5.3/compressed/picker.js'></script>
+	<script src='http://cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.5.3/compressed/picker.time.js'></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.10.4/typeahead.jquery.js'></script>
+  </head>
+  
+  	<body>
+     
+     <nav id="bt-menu" class="bt-menu">
+     
+				<a href="" class="bt-menu-trigger"><span>Menu</span></a>
+                
+				<ul>
+                
+					<li><a href="#">pause</a></li>
+					<li><a href="#">cancel</a></li>
+					<li><a href="#">reroute</a></li>
+					<li><a href="#">turn off bunny</a></li>
+					
+				</ul>
+     </nav>
+     
+     
+        <!-- <nav><img src="clock2.png" width="31" height="31"/><img src="legs.png" width="31" height="31"/></nav>-->
+ <!-- http://www.w3schools.com/js/js_form_validation.asp-->
+ 
+<!--http://stackoverflow.com/questions/781473/how-to-create-a-label-inside-an-input-element-->
+             <form id="myForm" name="myForm" action="demo_form.asp"method="post">
+  
+<!-- input type search: http://stackoverflow.com/questions/4864167/show-search-button-in-iphone-ipad-safari-keyboard-->
+  
+ 		<div class="timeicon"><!--<img class="timepicture" src="input2.png" height="24px" width="20">-->
+        
+            <input id="time" class="time timepicker" type="number" name="minutes" placeholder="when" oninput="allnumeric(this)" method="post" onsearch="javascript:onSearchSubmit()" onkeydown="javascript: if (event.keyCode == 13) onSearchSubmit();">
+        
+        <!--<input id='time' name="minutes" data-datebox-close-callback="onSearchSubmit" onsearch="javascript:onSearchSubmit()" onkeydown="javascript: if (event.keyCode == 13) onSearchSubmit();" name="mode7" id="mode7" type="text" data-role="datebox" data-options='{"mode":"timeflipbox"}' />-->
+        
+        </div>
+        
+ 		<div class="locicon"><!--<img src="input1.png" height="26px" width="22">-->
+            <input id="address" type="search" name="search" placeholder="where" onsearch="javascript:onSearchSubmit()" > 
+        </div>
+        
+  <!--<input type="button" value="Get information" onclick="startpath()">-->
+  <!--<div class="getinfo" onclick="startpath()">Get information</div>-->
+   <!--<div class="getinfo" onclick="if(validateForm() ) { startpath(true) }">Get information</div>-->
+  </form>
+  
+  
+  
+  <form data-role='none' action="/routebeschrijving" onSubmit="return false;" class="routeForm">
+    
+    <label><input type="radio" name="travelMode" value="TRANSIT" /> Public transport</label>
+    <label><input type="radio" name="travelMode" value="WALKING" /> Walking</label>
+    <input type="submit" value="Calculate route">
+  </form>
+  
+  <div data-role='none' class="info"><div>To reach destination you need to go <div class="speed1"></div></div></div>
+  <div class="impossible"><p>NOT  POSSIBLE!</br>because you will need to go faster than 4 MPH (average human walking speed)</p></div>
+  <div class="startwalk" onclick="startpath(false)">Start walk</div>
+  <!--<div class="backtomap" onclick="emptyinput()">Back to map</div>
+  
+  <div class="changewalk" onclick="emptyinput()">Change walk</p></div>-->
+  
+  
+  <div class="speed"></div>
+  <div class="curspeed"></div>
+  
+ <div class="alert">HURRY UP!<a class="buttonok" href="" >skip</a></div>
+    
+  <div id="map-canvas"></div>
+  
+  <div class="modal"></div> 
+  <div>
+  		<img class="square" src="user_icon.png" onclick="initClick();"/>
+  </div>
+  
+    <!--http://stackoverflow.com/questions/1964839/jquery-please-wait-loading-animation-->
+    
+
+<script>
+
+// http://stackoverflow.com/questions/3357553/how-to-store-an-array-in-localstorage
+
+// gets places as array from localStorage, empty array if nothing is stored
+
+ //http://amsul.ca/pickadate.js/time.htm
+ 
+ // how to get it to work?
+ 
+//$('.timepicker').pickatime({
+	
+   // formatLabel: function(time) {
+        //var hours = ( time.pick - this.get('now').pick ) / 60,
+            //label = hours < 0 ? ' !hours to now' : hours > 0 ? ' !hours from now' : 'now'
+       // return  'h:i a <sm!all>' + ( hours ? Math.abs(hours) : '' ) + label +'</sm!all>'
+		
+		
+   // }
+	
+	
+//});
+
+
+//$('.timepicker').pickatime({
+    //interval: 10
+	
+//});
+
+    $('.timepicker').pickatime({
+      interval: 10,  
+    formatLabel: function(time) {
+        var minutes = ( time.pick - this.get('now').pick );
+        var label = "";
+        var roundMinutes = Math.round(minutes);
+        var fullHours = Math.floor(roundMinutes / 60);
+
+        if (fullHours > 0) {
+            label += fullHours + " !hours";
+        }
+        
+        var restMinutes = Math.floor(roundMinutes % 60);
+        
+        console.log(restMinutes, roundMinutes, roundMinutes % 60);
+        
+        if (restMinutes > 0) {
+            if (label) {
+                label = label + " & ";
+            }
+            label += restMinutes + " !m!inutes";
+        }
+        
+        if (label) {
+            label = "<sm!all>" + label + " from now</sm!all>";
+        }
+        
+        
+        return "h:i a " + label;
+    }
+})
+
+</script>
+
+  </body>
+  
+  <script src="js/classie.js"></script>
+  <script src="js/borderMenu.js"></script>
+  
+</html>

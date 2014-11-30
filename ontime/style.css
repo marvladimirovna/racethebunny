@@ -1,0 +1,287 @@
+@charset "UTF-8";
+/* CSS Document */
+
+ html, body, #map-canvas {
+        margin: 0;
+        padding: 0;
+        height: 99.9%;
+		font-family: 'Open Sans Condensed', sans-serif;
+		
+      }
+
+
+  
+.time{
+z-index:3000;
+font-size:0.8em;
+position:absolute;
+top:0.1px;
+right:10%;	
+width:44%;
+height:23px;
+text-align:center;
+box-shadow:none;
+background-color:white;
+display:block;
+  outline: none;
+   border:none;
+   -webkit-appearance: none;
+border-radius: 0;
+	}	
+	
+	
+#address{
+z-index:3000;
+position:absolute;
+font-size:0.8em;
+top:0.1px;
+left:13%;	
+width:71%;
+text-align:center;
+box-shadow:none;
+height:23px;
+background-color:white;
+  display:block;
+  
+  outline: none;
+  border:none;
+  -webkit-appearance: none;
+border-radius: 0;
+	}
+
+
+.speed{
+border:1px solid #bc592e;
+z-index:3000;
+position:absolute;
+font-size:2em;
+top:50px;
+left:10%;	
+width:35%;
+display:none;	
+text-align:center;
+color:white;
+background-color:#bc592e;
+
+	}
+	
+.speed1{
+z-index:4000;
+font-size:1em;
+text-align:center;
+box-shadow:none;
+background-color:white;
+	}	
+.curspeed{
+border:1px solid #bc592e;
+z-index:3000;
+position:absolute;
+font-size:2em;
+top:50px;
+right:14%;	
+width:35%;
+font-variant:small-caps;
+display:none;
+text-align:center;
+color:white;
+background-color:#bc592e;
+	}			
+	
+.square {
+z-index:3000;
+position:absolute;
+bottom:0%;
+left:2%;
+
+}
+
+.getinfo
+
+{
+
+width:77%;
+z-index:3000;
+position:absolute;
+font-size:2em;
+top:53px;
+left:10%;	
+text-align:center;
+
+background-color:#bc592e;
+cursor:hand;
+color:white;
+height:40px;
+line-height:36px;
+}
+.info{
+
+width:77%;
+z-index:3000;
+position:absolute;
+top:50px;
+left:10%;	
+text-align:center;
+background-color:white;
+display:none;
+font-size:1.2em;
+	}
+.impossible{
+
+width:77%;
+z-index:3000;
+position:absolute;
+top:50px;
+left:10%;	
+text-align:center;
+background-color:white;
+display:none;
+font-size:1.2em;
+	}
+.backtomap{
+background-color:#bc592e;
+width:77%;
+z-index:3000;
+position:absolute;
+font-size:1.5em;
+top: 180px;
+left:10%;	
+text-align:center;
+color:white;
+text-decoration:none;
+cursor:hand;
+display:none;
+height:40px;
+line-height:40px;
+	}
+.startwalk{
+width:77%;
+z-index:3000;
+position:absolute;
+font-size:2em;
+top:120px;
+left:10%;	
+text-align:center;
+background-color:#bc592e;
+text-decoration:none;
+cursor:hand;
+display:none;
+color:white;
+height:40px;
+line-height:37px;
+	}
+.changewalk	{
+width:77%;
+z-index:3000;
+position:absolute;
+font-size:2em;
+top:170px;
+left:10%;	
+text-align:center;
+background-color:#bc592e;
+cursor:hand;
+text-decoration:none;
+display:none;
+color:white;
+height:40px;
+line-height:36px;
+	}
+	
+.locicon{
+z-index:3000;
+position:absolute;
+font-size:1.3em;
+top:8px;
+left:10%;	
+width:47%;
+height:32px;
+box-shadow:none;
+ display:block;
+  margin-bottom:15px;
+  margin-top:5px;
+  outline: none;
+  background-color:white;
+	}
+	
+.timeicon{
+z-index:4000;
+font-size:1.3em;
+position:absolute;
+top:8px;
+right:14%;
+height:32px;	
+width:26%;
+ display:block;
+ margin-bottom:15px;
+ margin-top:5px;
+ outline: none;
+ background-color:white; 
+	}
+input:focus {outline: none;
+box-shadow:none;
+border:none;
+
+}	
+
+.timepicture{
+padding-top:0.9px;
+padding-left:3px;
+	}
+	
+	
+img {
+max-width:100%;	
+	}	
+	
+.modal {
+    display:    none;
+    position:   absolute;
+    z-index:    5000;
+    top:        50px;
+   
+    height:     100%;
+    width:      100%;
+    background: 
+                url('http://i.stack.imgur.com/FhHRx.gif') 
+                50% 50% 
+                no-repeat;
+}
+
+body.loading {
+    overflow: hidden;   
+}
+
+body.loading .modal {
+    display: block;
+}
+
+.alert{
+	
+width:77%;
+z-index:3000;
+position:absolute;
+top:50px;
+left:10%;	
+text-align:center;
+background-color:#bc592e;
+display:none;
+font-size:2em;
+color:white;	
+height: 66px;
+line-height:66px;
+
+	}
+.buttonok{
+display:none;
+z-index:3000;
+text-decoration:none;
+left:10%;	
+text-align:center;
+background-color:white;
+font-size:1em;
+color:#bc592e;	
+height: 30px;
+line-height:24px;
+	
+	}	
+
+ 	

@@ -1,0 +1,99 @@
+@charset "UTF-8";
+/* CSS Document */
+body{
+background-color:#eeeddf;
+/*color:#726f6e;*/
+color:#bc592e;
+/*background-color:#5d7982;
+color:white;*/
+font-family: 'Open Sans Condensed', sans-serif;
+/*background-image:url('6.jpg');*/
+	}
+	
+/*http://stackoverflow.com/questions/5967758/css-absolute-position-from-top-horizontally-centered-div*/
+	
+.icons {
+
+position:absolute;
+top:25px;
+left: 50%;
+margin-left: -100px;
+}
+
+.name{
+font-size:4em;
+text-align:center;	
+position:absolute;
+top:100px;
+width:100%;	
+
+	}
+
+.description{
+z-index:100;
+text-align:center;
+position:absolute;
+bottom:95px;
+left:12%;
+color:#9b9588;
+width:77%;
+font-size:1em;
+	
+	}
+
+.button {
+position:absolute;
+bottom:20px;
+left:12%;	
+width:77%;
+height:50px;
+text-align:center;
+background-color:#bc592e;
+font-size:2em;
+/*font-weight:bold;*/
+color: white;
+text-decoration:none;
+line-height:50px;
+
+}
+
+img{
+float:left;
+max-width:100%;
+padding-right:10px;	
+	
+	}
+	
+.forclock{
+	z-index:300;
+float:left;
+position:absolute;
+top:70px;
+left:10%;
+display:none;
+	}
+
+.forpath{
+z-index:300;	
+float:left;
+position:absolute;
+top:70px;
+left:30%;
+display:none;
+	}
+
+.forlegs{
+	float:left;
+position:absolute;
+z-index:300;
+top:70px;
+right:11%;
+display:none;
+	}
+
+.train{
+position:absolute;
+bottom:0%;
+float:right;	
+	
+	}

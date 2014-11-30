@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>punctualme_landingpage</title>
+    <link href="firststyle.css" rel="stylesheet">
+<!--    <style type="text/css" media="screen">@import "themes/css/jqtouch.css";</style>
+<script src="src/lib/zepto.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="src/jqtouch.min.js" type="text/javascript" charset="utf-8"></script>-->
+   	<script src="jquery-1.10.2.min.js"></script>
+    <link rel="stylesheet" href="idangerous.swiper.css">
+    <script src="idangerous.swiper.js"></script>
+    
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+</head>
+
+<!--<body onLoad="setTimeout('delayer()', 3000)" class="landingpage">-->
+
+<body class="landingpage">
+
+  <div class="icons">
+  
+  <!--<img class="clock" src="clock2.png" width="61" height="61"/>-->
+  <img  class="path" src="path2.png" width="61" height="61"/>
+  <!--<img class="legs" src="legs.png" width="61" height="61"/>-->
+  
+  </div>
+  
+  <div class="explanation">
+   <!--<img class="forclock" src="forclock.png"/>-->
+   <img class="forpath" src="forpath.png"/>
+   <!--<img class="forlegs" src="forlegs.png"/>-->
+   </div>
+  
+  <div class="name">punctual me</div>
+  
+  <div class="description">  
+</div>
+    
+<!--<a class="button" href="index.html">Go</a>
+
+<!--<div class="train"><img src="train4.png"></div>-->
+
+<script>
+
+$(document).ready(function(){
+	
+	$(".clock").click(function(){
+		$(".forclock").fadeIn(300).delay(1000).fadeOut(300);
+	});
+		
+
+	$(".legs").click(function(){
+	$(".forlegs").fadeIn(300).delay(1000).fadeOut(300);
+		});
+	
+	});
+	
+<!-- redirect function http://www.tizag.com/javascriptT/javascriptredirect.php -->
+function delayer(){
+    window.location = "onboarding.html"
+}
+
+</script>
+    
+</body>
+</html>

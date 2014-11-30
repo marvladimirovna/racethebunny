@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>ontime</title>
+    <link href="style.css" rel="stylesheet">
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+   	<script src="jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="myjs.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Pathway+Gothic+One' rel='stylesheet' type='text/css'>
+     <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700' rel='stylesheet' type='text/css'>
+  </head>
+  	<body>
+ <!-- <nav><img src="clock2.png" width="31" height="31"/><img src="legs.png" width="31" height="31"/></nav>-->
+ <!-- http://www.w3schools.com/js/js_form_validation.asp-->
+ 
+<!--http://stackoverflow.com/questions/781473/how-to-create-a-label-inside-an-input-element-->
+  <form id="myForm" name="myForm" action="demo_form.asp"method="post">
+ 		<div class="timeicon"><img class="timepicture" src="input2.png" height="24px" width="20"><input id="time" class="time" type="tel" name="minutes" placeholder="min" oninput="allnumeric(this)" method="post"></div>
+ 		<div class="locicon"><img src="input1.png" height="26px" width="22"><input id="address" type="textbox" name="address" placeholder="your destination"> </div>
+  <!--<input type="button" value="Get information" onclick="startpath()">-->
+  <!--<div class="getinfo" onclick="startpath()">Get information</div>-->
+   <div class="getinfo" onclick="if(validateForm() ) { startpath(true) }">Get information</div>
+  </form>
+  <div class="info"><div>To reach destination you need to go <div class="speed1"></div></div></div>
+  <div class="impossible"><p>NOT  POSSIBLE!</br>because you will need to go faster than 4 MPH (average human walking speed)</p></div>
+  <div class="backtomap" onclick="emptyinput()">Back to map</div>
+  <div class="startwalk" onclick="startpath(false)">Start walk</div>
+  <div class="changewalk" onclick="emptyinput()">Change walk</p></div>
+  
+  
+  <div class="speed"></div>
+  <div class="curspeed"></div>
+  
+ <div class="alert">HURRY UP!<a class="buttonok" href="" >ok</a></div>
+    
+  <div id="map-canvas"></div>
+  
+  <div class="modal"></div> 
+  <div>
+  		<img class="square" src="path2.png" width="61" height="61" onclick="initClick();"/>
+  </div>
+  
+    <!--http://stackoverflow.com/questions/1964839/jquery-please-wait-loading-animation-->
+<div class="modal"></div> 
+  </body>
+</html>
