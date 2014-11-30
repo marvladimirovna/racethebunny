@@ -1,6 +1,8 @@
 @charset "UTF-8";
 /* CSS Document */
 
+select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"] { font-size: 16px; }
+
 @font-face {
     font-family: 'marken';
     src: url('fonts/marken.ttf') format('truetype');
@@ -24,7 +26,7 @@ font-family: "marken";
   
 .time{
 z-index:3000;
-font-size:0.6em;
+/*font-size:0.6em;*/
 position:absolute;
 top:3px;
 right:2%;	
@@ -44,7 +46,7 @@ border-radius: 0;
 #address{
 z-index:3000;
 position:absolute;
-font-size:0.6em;
+/*font-size:0.6em;*/
 top:3px;
 /*left:3%;*/
 width:71%;
@@ -66,7 +68,7 @@ border-radius: 0;
 width:53%;
 z-index:4000;
 position:absolute;
-font-size:0.6em;
+/*font-size:0.6em;*/
 top:45px;
 left:1%;	
 text-align:center;
@@ -83,7 +85,7 @@ text-align:left;
 border:1px solid #bc592e;
 z-index:3000;
 position:absolute;
-font-size:1em;
+/*font-size:1em;*/
 top:50px;
 left:10%;	
 width:35%;
@@ -96,7 +98,7 @@ background-color:#bc592e;
 	
 .speed1{
 z-index:4000;
-font-size:0.6em;
+/*font-size:0.6em;*/
 text-align:center;
 box-shadow:none;
 background-color:white;
@@ -105,7 +107,7 @@ background-color:white;
 border:1px solid #bc592e;
 z-index:3000;
 position:absolute;
-font-size:1em;
+/*font-size:1em;*/
 top:50px;
 right:14%;	
 width:35%;
@@ -131,7 +133,7 @@ left:2%;
 width:77%;
 z-index:3000;
 position:absolute;
-font-size:1em;
+/*font-size:1em;*/
 top:53px;
 left:10%;	
 text-align:center;
@@ -151,7 +153,7 @@ left:10%;
 text-align:center;
 background-color:white;
 display:none;
-font-size:1em;
+/*font-size:1em;*/
 	}
 .impossible{
 
@@ -163,14 +165,14 @@ left:10%;
 text-align:center;
 background-color:white;
 display:none;
-font-size:1em;
+/*font-size:1em;*/
 	}
 .backtomap{
 background-color:#bc592e;
 width:77%;
 z-index:3000;
 position:absolute;
-font-size:1em;
+/*font-size:1em;*/
 top: 180px;
 left:10%;	
 text-align:center;
@@ -185,7 +187,7 @@ line-height:40px;
 width:77%;
 z-index:3000;
 position:absolute;
-font-size:1em;
+/*font-size:1em;*/
 top:120px;
 left:10%;	
 text-align:center;
@@ -201,7 +203,7 @@ line-height:37px;
 width:77%;
 z-index:3000;
 position:absolute;
-font-size:1em;
+/*font-size:1em;*/
 top:170px;
 left:10%;	
 text-align:center;
@@ -217,7 +219,7 @@ line-height:36px;
 .locicon{
 z-index:3000;
 position:absolute;
-font-size:1em;
+/*font-size:1em;*/
 top:8px;
 left:1%;	
 width:53%;
@@ -232,7 +234,7 @@ box-shadow:none;
 	
 .timeicon{
 z-index:9000;
-font-size:1em;
+/*font-size:1em;*/
 position:absolute;
 top:8px;
 right:1%;
@@ -281,7 +283,7 @@ position:absolute;
 text-align:center;
 background-color:#bc592e;
 display:none;
-font-size:1em;
+/*font-size:1em;*/
 color:white;	
 /*height:66px;*/
 height:100%;
@@ -295,7 +297,7 @@ text-decoration:none;
 /*left:10%;*/
 text-align:center;
 background-color:white;
-font-size:1em;
+/*font-size:1em;*/
 color:#bc592e;	
 height: 30px;
 line-height:24px;
@@ -304,7 +306,7 @@ line-height:24px;
 	
 li {
 list-style-type: none;	
-font-size:0.6em;
+/*font-size:0.6em;*/
 	}	
 		
 		
@@ -328,7 +330,7 @@ padding: 4px 0px;
 .time timepicker{
 	
 	z-index:3000;
-font-size:0.6em;
+/*font-size:0.6em;*/
 position:absolute;
 top:3px;
 right:2%;	
@@ -356,7 +358,7 @@ border-radius: 0;
 .tt-hint {
     display: block;
     width: 100%;
-    font-size:0.6em;
+/*    font-size:0.6em;*/
     margin-top: 3px;
     color: #999;
     vertical-align: middle;
