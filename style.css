@@ -256,8 +256,10 @@ margin-top: 32px;
 max-width: 100% !important;
 }
 
-.picker__holder{
-width: 100% !important;
+.picker--time .picker__holder{
+  width: 215%;
+  min-width: 215%;
+  margin-left: -115%;
 }
 .timepicture{
 padding-top:0.9px;
