@@ -127,7 +127,7 @@ function updatePosition(onPositionFunc) {
       curSpeed = Math.floor(position.coords.speed * 2.23694);
       
       // update displayed `curspeed`
-      $(".curspeed").text(curSpeed + " MPH");
+      // $(".curspeed").text(curSpeed + " MPH");
       
       pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 
@@ -323,8 +323,8 @@ function calspeed(meters){
   // convert from meters per second to miles per hour
   speed = speedms * 2.23694;
   // update your speed and desired speed
-  $(".speed").text(speed.toFixed(2) + " " + "MPH");
-  $(".speed1").text(speed.toFixed(2) + " " + "MPH").show();
+  //$(".speed").text(speed.toFixed(2) + " " + "MPH");
+  //$(".speed1").text(speed.toFixed(2) + " " + "MPH").show();
 }
 
 //Hurry up function
@@ -350,32 +350,33 @@ function checkIfSpeedIsPossibleForHuman(){
   
   if(speed>4){
     $(".getinfo").css("display","none"),
-    $(".impossible").css("display","block"),
+//    $(".impossible").css("display","block"),
     $(".backtomap").css("display","block"),
     $(".backtomap").click(function(){
       $(this).css("display","none"),
-      $(".impossible").css("display","none"),
+//      $(".impossible").css("display","none"),
       $(".getinfo").css("display","block");
     });
     return false;
   }
   else{
     $(".getinfo").css("display","none");
-    $(".info").css("display","block");
+//    $(".info").css("display","block");
     $(".changewalk").css("display","block");
     $(".startwalk").css("display","block");
     
   $(".startwalk").click(function(){
-    $(this).css("display","none"),
-    $(".info").css("display","none"),
-    $(".changewalk").css("display","none"),
-    $(".speed").css("display","block"),
-    $(".curspeed").css("display","block");});
+    $(this).css("display","none");
+//    $(".info").css("display","none");
+    $(".changewalk").css("display","none");
+    //$(".speed").css("display","block"),
+    //$(".curspeed").css("display","block");
+  });
     
   $(".changewalk").click(function(){
     $(this).css("display","none"),
     $(".startwalk").css("display","none"),
-    $(".info").css("display","none"),
+//    $(".info").css("display","none"),
     $(".getinfo").css("display","block");
     });
     
