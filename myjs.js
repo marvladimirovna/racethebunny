@@ -55,31 +55,29 @@ function initialize() {
 	   $(".routeForm").show();  });
 
 
-  var styles = [
+    
+var styles = [
     {
       stylers: [
-        { hue: "#f4f2ee" },
-  { saturation: 60 },
-  { lightness: -20 },
-  { gamma: 1.51 }
+        { hue: "#eeeddf" },
+        { saturation: -60 }
       ]
-    }, 
-      
-      {
+    },{
       featureType: "road",
       elementType: "geometry",
       stylers: [
         { lightness: 10 },
         { visibility: "simplified" }
       ]
-    }, {
+    },{
       featureType: "road",
       elementType: "labels",
       stylers: [
         { visibility: "off" }
       ]
     }
-  ];
+  ];    
+    
 
 
   var mapOptions = {
