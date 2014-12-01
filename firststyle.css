@@ -4,8 +4,9 @@
 
 body{
 background-color:#eeeddf;
-color:#bc592e;
+color:#a7a9ab;
 font-family: 'Ubuntu', sans-serif;
+margin:0;
 	}
 	
 /*http://stackoverflow.com/questions/5967758/css-absolute-position-from-top-horizontally-centered-div*/
@@ -81,6 +82,34 @@ text-align: center;
 
 /* Specify Swiper's Size: */
 .swiper-container, .swiper-slide {
-  width: 100%;
-  height: 100%;
+width: 100%;
+height: 100%;
+background-color:#93cdc2;
+color:white;
+}
+
+.pagination {
+    position: fixed;
+    bottom: 0px;
+    height: 10px;
+/*    background: black;*/
+    /* top: 0px; */
+    z-index: 99999;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align:center;
+}
+
+.swiper-pagination-switch {
+   display:inline-block;
+    width: 10px;
+    height: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: white;
+}
+
+.swiper-pagination-switch.swiper-active-switch {
+background-color: red;
 }
