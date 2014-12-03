@@ -10,14 +10,6 @@ margin:0;
 	}
 	
 /*http://stackoverflow.com/questions/5967758/css-absolute-position-from-top-horizontally-centered-div*/
-	
-/*
-.icons {
-position:absolute;
-top:45%;
-left: 45%;
-}
-*/
 
 .name{
 font-variant: small-caps;
@@ -112,4 +104,69 @@ color:white;
 
 .swiper-pagination-switch.swiper-active-switch {
 background-color: red;
+}
+
+.welcome{
+font-variant: small-caps;
+text-align: center;
+}
+
+.onboardingyou{
+text-align: center;
+font-size: 0.8em;
+line-height: 150%;
+}
+
+.onboardingbunny{
+text-align: center;
+font-size: 0.8em;
+line-height: 150%;
+}
+
+.onboardingcarrot{
+text-align: center;
+font-size: 0.8em;
+line-height: 150%;
+}
+
+.onboardingthird{
+text-align: center;
+font-size: 0.8em;
+line-height: 150%;
+}
+
+.onboardinglast{
+text-align: center;
+font-size: 0.8em;
+line-height: 150%;
+}
+
+.bunnyforonboarding {
+    display: block;
+    margin-left: auto;
+    margin-right: auto      
+}
+
+.userforonboarding {
+    display: block;
+    margin-left: auto;
+    margin-right: auto      
+}
+
+.bunnyforonboarding {
+    display: block;
+    margin-left: auto;
+    margin-right: auto      
+}
+
+.carrotforonboarding {
+    display: block;
+    margin-left: auto;
+    margin-right: auto      
+}
+
+.carrotforonboarding {
+    display: block;
+    margin-left: auto;
+    margin-right: auto      
 }
