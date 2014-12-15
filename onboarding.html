@@ -23,70 +23,78 @@
       
       <!--First Slide-->
       <div class="swiper-slide" class="inside"> 
-          <div class="onboardingcontent">
+        
           <p class="welcome"> welcome</p><br>
-          <img class="userforonboarding" src="onboarding_icon_1.png"/>
           
-          <p class="onboardingyou">you</p>
-          
-          <img class="bunnyforonboarding" src="onboarding_icon_2.png"/>
-         
-          <p class="onboardingbunny">bunny</p>
+          <div class="youbunny">
+              <div>
+                  <img class="userforonboarding" src="onboarding_icon_1.png"/>
+                  <p class="onboardingyou">you</p>
+              </div>
+              <div>
+                <img class="bunnyforonboarding1" src="onboarding_icon_2.png"/>
+                <p class="onboardingbunny">bunny</p>
+              </div>
           </div>
+          
       </div>
       
       <!--Second Slide-->
       <div class="swiper-slide">
-          <div class="onboardingcontent">
     
       <img class="carrotforonboarding" src="onboarding_icon_3.png"/>
       <p class="onboardingcarrot"> every time you go somewhere<br>
           the carrot waits for you at the end</p>
-          </div>
+        
       </div>
       
       <!--Third Slide-->
       <div class="swiper-slide"> 
-          <div class="onboardingcontent">
 
        <img class="bunnyforonboarding" src="onboarding_icon_2.png"/>
       <p class="onboardingthird">the bunny is punctual ;<br>
           it will reach the carrot on time</p>
-          </div>
+          
+          
       </div>
       
   <!--Forth Slide-->
-  <div class="swiper-slide"> 
-      <div class="onboardingcontent">
+  <div class="swiper-slide">
 
       <img class="bunnyforonboarding" src="onboarding_icon_2.png"/>
       <p class="onboardinglast"> race the bunny<br>
           to get your carrot</p>
-      <img class="carrotforonboarding" src="onboarding_icon_3.png"/>
-      </div>
+      <img class="carrotforonboarding1" src="onboarding_icon_3.png"/>
+      
       </div>
       
-  <div class="pagination"></div>
+  
     
 </div>
-
+    
+    
+   
+</div>
+    <a class="getstarted" href="index.html" >get started</a>
+    <div class="pagination"></div>
 <script>
 
 var mySwiper = new Swiper('.swiper-container',{
     pagination: '.pagination',
     loop:true,
     grabCursor: true,
+    calculateHeight: true,
     paginationClickable: true
   })
 
-$(function(){
-  var mySwiper = $('.swiper-container').swiper({
-    //Your options here:
-    mode:'horizontal',
-    loop: true
-    //etc..
-  });
-})
+//$(function(){
+//  var mySwiper = $('.swiper-container').swiper({
+//    //Your options here:
+//    mode:'horizontal',
+//    loop: true
+//    //etc..
+//  });
+//})
 
 </script>
     

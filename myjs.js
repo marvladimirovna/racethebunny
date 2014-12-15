@@ -465,8 +465,14 @@ var substringMatcher = function() {
   };
 };
 
-
 $(function() {
+    var $pauseButtons = $("li.pause");
+    
+    $pauseButtons.click(function(e) {
+        $pauseButtons.toggle();
+        e.isPropagationStopped();
+    });
+    
     $('#address').typeahead({
       hint: true,
       highlight: true,
