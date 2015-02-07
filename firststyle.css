@@ -3,32 +3,11 @@
 
 
 body{
-background-color:#eeeddf;
-color:#a7a9ab;
 font-family: 'Ubuntu', sans-serif;
 margin:0;
 	}
 	
 /*http://stackoverflow.com/questions/5967758/css-absolute-position-from-top-horizontally-centered-div*/
-
-.name{
-font-variant: small-caps;
-font-weight: bold;
-font-size:1.2em;
-text-align:center;	
-width:100%;	
-color:#CCC8BE;
-	}
-
-.slogan{
-font-variant: small-caps;
-font-size:1em;
-text-align:center;	
-margin-left: 33px;
-margin-top: -12px;
-width:100%;	
-color:#CCC8BE;
-}
 
 
 img{
