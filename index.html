@@ -3,45 +3,58 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <meta charset="utf-8">
     <title>racethebunny</title>
     <link rel="icon" type="image/png" href="favicon.png" />
     <link href="style.css" rel="stylesheet">
-	  <link rel="stylesheet" type="text/css" href="css/icons.css" />
-	  <link rel="stylesheet" type="text/css" href="css/style5.css" />
+    <link rel="stylesheet" type="text/css" href="css/icons.css" />
+    <link rel="stylesheet" type="text/css" href="css/style5.css" />
     <link rel="stylesheet" type="text/css" href="css/mobiscroll.core.css" />
     <link rel="stylesheet" type="text/css" href="css/mobiscroll.animation.css" />
     <link rel="stylesheet" type="text/css" href="css/mobiscroll.android-ics.css" />
-	  <script src="js/modernizr.custom.js"></script>
+
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
-   	<script src="jquery-1.10.2.min.js"></script>
+    <script src="js/modernizr.custom.js"></script>
+    <script src="js/fiber.min.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/gameState.js"></script>
+    <script src="js/placesStorage.js"></script>
+    <script src="js/bunny.js"></script>
+    <script src="js/mapWrapper.js"></script>
+    <script src="jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="js/myjs.js"></script>
+    
     <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
     <link href='http://cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.5.3/compressed/themes/classic.css' rel='stylesheet' type='text/css'>
     <link href='http://cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.5.3/compressed/themes/classic.time.css' rel='stylesheet' type='text/css'>
-  
-  	<script src='http://cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.5.3/compressed/picker.js'></script>
-	<script src='http://cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.5.3/compressed/picker.time.js'></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.5.3/compressed/picker.js'></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.5.3/compressed/picker.time.js'></script>
     <script src='http://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.10.4/typeahead.jquery.js'></script>
   </head>
   
-  	<body>
+    <body>
 <!--http://tympanus.net/codrops/2013/09/30/animated-border-menus/-->
         
      <nav id="bt-menu" class="bt-menu">
      
-				<a href="" class="bt-menu-trigger"><span>Menu</span></a>
+        <a href="" class="bt-menu-trigger"><span>Menu</span></a>
                 
-				<ul>
-                
-					<li class="pause"><a href="#">pause</a></li>
-                    <li class="pause" style="display: none"><a href="#">release</a></li>
-					<li><a id="menu_cancel" href="#">cancel</a></li>
-					<li><a href="#">reroute</a></li>
-					<li><a href="#">turn off bunny</a></li>
-					
-				</ul>
+        <ul>      
+          <li class="pause">
+            <a href="#">pause</a>
+          </li>
+          <li class="pause" style="display: none">
+            <a href="#">release</a>
+          </li>
+          <li>
+            <a id="menu_cancel" href="#">cancel</a></li>
+          <li>
+            <a href="#">reroute</a></li>
+          <li>
+            <a href="#">turn off bunny</a>
+          </li>
+        </ul>
      </nav>
      
      
@@ -53,46 +66,46 @@
   
 <!-- input type search: http://stackoverflow.com/questions/4864167/show-search-button-in-iphone-ipad-safari-keyboard-->
   
- 		<div class="timeicon">
+    <div class="timeicon">
       <input id="time" class="time timepicker" type="text" name="minutes" placeholder="when" method="post" onsearch="javascript:onSearchSubmit()" onkeydown="javascript: if (event.keyCode == 13) onSearchSubmit();">    
     </div>
         
- 		<div class="locicon"><!--<img src="input1.png" height="26px" width="22">-->
+    <div class="locicon"><!--<img src="input1.png" height="26px" width="22">-->
       <input id="address" type="search" name="search" placeholder="where" onsearch="javascript:onSearchSubmit()" > 
     </div>
   </form>
-  
-  
 
+    <div id="startwalk" class="startwalk">
+      start
+    </div>
   
-<div class="startwalk" onclick="startpath(false)">start</div>
-  
- <div class="alert">HURRY UP 
-     <p>you are feet away</p>
-     <a class="buttoncancel" href="" >cancel trip</a>
-     <a class="buttonok" href="" >skip</a>
-  </div>
+    <div class="alert">HURRY UP 
+       <p>you are feet away</p>
+       <a class="buttoncancel" href="" >cancel trip</a>
+       <a class="buttonok" href="" >skip</a>
+    </div>
         
- <div class="alert1">SLOW DOWN 
-     <p>you have min</p>
-     <a class="buttoncancel1" href="" >cancel trip</a>
-     <a class="buttonok1" href="" >skip</a>      
-  </div>        
+    <div class="alert1">SLOW DOWN 
+       <p>you have min</p>
+       <a class="buttoncancel1" href="" >cancel trip</a>
+       <a class="buttonok1" href="" >skip</a>      
+    </div>        
     
-  <div id="map-canvas"></div>
+    <div id="map-canvas"></div>
   
-  <div class="modal"></div> 
-  <div>
-  		<img class="square" src="user_icon.png" onclick="initClick();"/>
-  </div>
+    <div class="modal"></div> 
+    
+    <div>
+        <img id="user_square_icon" class="square" src="user_icon.png"/>
+    </div>
   
-  <script src="js/classie.js"></script>
-  <script src="js/borderMenu.js"></script>
-  <script src="js/menubuttons.js"></script>
-  <script src="js/timepick.js"></script>
-  <script src="js/mobiscroll.core.js"></script>
-  <script src="js/mobiscroll.datetime.js"></script>
-  <script src="js/mobiscroll.android-ics.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/borderMenu.js"></script>
+    <script src="js/menubuttons.js"></script>
+    <script src="js/timepick.js"></script>
+    <script src="js/mobiscroll.core.js"></script>
+    <script src="js/mobiscroll.datetime.js"></script>
+    <script src="js/mobiscroll.android-ics.js"></script>
+  
   </body>
-  
 </html>

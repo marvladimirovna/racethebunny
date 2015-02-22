@@ -3,6 +3,9 @@ $(function() {
     
     $pauseButtons.click(function(e) {
         $pauseButtons.toggle();
+
+        // 
+
         e.isPropagationStopped();
     });
     
@@ -14,7 +17,7 @@ $(function() {
     {
       name: 'prevAddresses',
       displayKey: 'value',
-      source: substringMatcher()
+      source: window.placesStorage.placesMatcher()
     });
 
     // handler for cancel menu
