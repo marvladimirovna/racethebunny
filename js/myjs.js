@@ -88,12 +88,22 @@ function updateInfoWithRoute(route) {
     checkIfSpeedIsPossibleForHuman(requiredSpeed);
 }
 
+function startCalcRouteTimer() {
+  timeout = setTimeout(recurringCalcRoute, REFRESH_ROUTE_INTERVAL * 1000);
+}
+
+function stopCalcRouteTimer() {
+  if (timeout) {
+    clearTimeout(timeout);
+  }
+}
+
 function updateGameState(route) {
   // update bunny
   bunny.update(route);
 
   // reschedule next update
-  timeout = setTimeout(recurringCalcRoute, REFRESH_ROUTE_INTERVAL * 1000);
+  startCalcRouteTimer();
   if (utils.getCurrentTimestamp() > gameState.lastHurryUpAlert + HURRY_UP_INTERVAL) {
     hurryup();
     gameState.setLastHurryUpAlert(utils.getCurrentTimestamp());
@@ -148,8 +158,7 @@ function hurryup() {
   
   
 function checkIfSpeedIsPossibleForHuman(requiredSpeed) {
-
-  if(requiredSpeed > 4){
+  if(false){ // requiredSpeed > 4
     $(".getinfo").css("display","none"),
 //    $(".impossible").css("display","block"),
     $(".backtomap").css("display","block"),
@@ -205,10 +214,6 @@ function validateForm() {
 
 
 //from here: http://stackoverflow.com/questions/15343890/clear-input-fields-on-form-submit
-function emptyinput() {
-  var form = document.getElementById("myForm");
-  form.reset();
-}   
 
 google.maps.event.addDomListener(window, 'load', initialize);
 

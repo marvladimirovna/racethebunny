@@ -53,8 +53,8 @@ var MapWrapper = Fiber.extend(function() {
             this.map.setMapTypeId('map_style');
 
             this.directionsDisplay = new google.maps.DirectionsRenderer();
-            this.directionsDisplay.setMap(this.map);
             this.directionsService = new google.maps.DirectionsService();
+            this.directionsDisplay.setMap(this.map);
         },
         // this function will be called if no HTML geo location available
         handleNoGeolocation: function(errorFlag) {
@@ -66,6 +66,9 @@ var MapWrapper = Fiber.extend(function() {
           console.log(content);
         },
         recalculateRoute: function(where, onRouteReady) {
+            if (!this.directionsDisplay.getMap()) {
+                this.directionsDisplay.setMap(this.map);
+            }
             var that = this;
             var travelMode = "WALKING";
             var request = {
@@ -76,13 +79,16 @@ var MapWrapper = Fiber.extend(function() {
             
             this.directionsService.route(request, function(response, status) {
               if (status == google.maps.DirectionsStatus.OK) {
-                window.mapWrapper.directionsDisplay.setDirections(response);
+                that.directionsDisplay.setDirections(response);
 
                 var route = response.routes[0].legs[0];
 
                 onRouteReady(route);
               }
             });
+        },
+        removeDirections: function() {
+            this.directionsDisplay.setMap(null);
         },
         updatePosition: function(onPositionFunc) {
             // Try HTML5 geolocation

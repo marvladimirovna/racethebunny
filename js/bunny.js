@@ -3,13 +3,13 @@ var Bunny = Fiber.extend(function() {
     return {
         // The `init` method serves as the constructor.
         init: function() {
-            // Private
-            function private1(){}
-            function private2(){}
             this.bunnyMarker = null;
-            // Privileged
-            this.privileged1 = function(){}
-            this.privileged2 = function(){}
+        },
+        removeFromMap: function() {
+            this.bunnyMarker.setMap(null);
+        },
+        addToMap: function() {
+            this.bunnyMarker.setMap(mapWrapper.map);
         },
         update: function(route) {
           console.dir(route);
@@ -40,16 +40,19 @@ var Bunny = Fiber.extend(function() {
 
               var bunnyPos = new google.maps.LatLng(newLat, newLong);
               // marker for user
-              var image = 'bunny_icon.png';
+              var image = 'bunny.png';
               
               if (!this.bunnyMarker) {
                 this.bunnyMarker = new google.maps.Marker({
-                  map: window.mapWrapper.map,
+                  map: mapWrapper.map,
                   position: bunnyPos,
                   title: "You are here!",
                   icon: image
                 });
               } else {
+                if (!this.bunnyMarker.getMap()) {
+                    this.bunnyMarker.setMap(mapWrapper.map);
+                }
                 this.bunnyMarker.setPosition(bunnyPos);
               }
 

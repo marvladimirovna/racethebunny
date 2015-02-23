@@ -2,12 +2,7 @@
 var GameState = Fiber.extend(function() {
     return {
         init: function() {
-            this.userSpeed = null;
-            this.bunnySpeed = null;
-            this.destination = null;
-            this.arrivalTime = null;
-            this.startTime = null;
-            this.lastHurryUpAlert = null;
+          this.reset();
         },
         setUserSpeed: function(speed) {
           this.userSpeed = speed;
@@ -26,6 +21,14 @@ var GameState = Fiber.extend(function() {
         },
         setBunnySpeed: function(bunnySpeed) {
           this.bunnySpeed = bunnySpeed;
+        },
+        reset: function() {
+            this.userSpeed = null;
+            this.bunnySpeed = null;
+            this.destination = null;
+            this.arrivalTime = null;
+            this.startTime = null;
+            this.lastHurryUpAlert = null;
         }
       }
 });

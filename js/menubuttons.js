@@ -1,10 +1,19 @@
 $(function() {
     var $pauseButtons = $("li.pause");
     
+    function emptyinput() {
+      var form = document.getElementById("myForm");
+      form.reset();
+    }   
+
     $pauseButtons.click(function(e) {
         $pauseButtons.toggle();
 
-        // 
+        if (this.id == "release_li") {
+          startCalcRouteTimer();
+        } else {
+          stopCalcRouteTimer();
+        }
 
         e.isPropagationStopped();
     });
@@ -23,16 +32,13 @@ $(function() {
     // handler for cancel menu
     // should stop current navigation and clear input fields
     $("#menu_cancel").click(function() {
-        if (timeout) {
-            clearTimeout(timeout);
-        }
-        if (timeout1) {
-            clearTimeout(timeout1);
-        }
+        stopCalcRouteTimer();
         emptyinput();
         // remove navigation route from map
         // https://developers.google.com/maps/documentation/javascript/reference#DirectionsRenderer
-        directionsDisplay.setMap(null);
+        mapWrapper.removeDirections();
+        gameState.reset();
+        bunny.removeFromMap();
     });
     
 });
